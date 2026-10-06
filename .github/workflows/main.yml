@@ -1,4 +1,4 @@
-name: Primer parcial: despliegue automatico
+name: Despliegue automatico del primer parcial
 
 on:
   push:
@@ -13,7 +13,7 @@ jobs:
       - name: Traer el proyecto
         uses: actions/checkout@v4
 
-      - name: Preparar Node.js
+      - name: Preparar Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
@@ -21,7 +21,7 @@ jobs:
       - name: Instalar Surge
         run: npm install --global surge
 
-      - name: Enviar pagina a la nube
+      - name: Publicar la pagina
         run: surge ./ ${{ secrets.SURGE_DOMAIN }}
         env:
           SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
