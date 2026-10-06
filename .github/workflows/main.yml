@@ -1,4 +1,4 @@
-name: Despliegue automatico del primer parcial
+name: Deploy
 
 on:
   push:
